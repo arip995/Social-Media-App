@@ -1,4 +1,4 @@
-const {schema, model} = require('mongoose');
+const {Schema, model} = require('mongoose');
 
 const postSchema = new Schema({ 
     body: String,
@@ -23,4 +23,4 @@ const postSchema = new Schema({
     }
 });
 
-moule.exports = model('post',postSchema);
+module.exports = model('Post',postSchema);
