@@ -28,6 +28,6 @@ type Post{
   type Mutation {
       register(registerInput:RegisterInput):User!
       #the register query should pass a parameter registerInput which should look like RegisterInput and should retutn some value of type User
-      
+      login(username:String!,password:String!):User!
   }
 `;
