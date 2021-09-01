@@ -1,4 +1,6 @@
 const { ApolloServer, gql } = require('apollo-server');
+const mongoose = require('mongoose');
+const {MONGODB} = require('./config.js')
 // const gql = require('graphql-tag');
 
 // A schema is a collection of type definitions (hence "typeDefs")
@@ -35,4 +37,8 @@ const server = new ApolloServer({
     resolvers
  });
 
- server.listen({port: 3000}).then((res) => {console.log(`Server running at port ${res.url}`)});
+ mongoose.connect(MONGODB,{useNewUrlParser:true})
+ .then(() =>{
+     console.log('hii')
+     return server.listen({port: 3000})
+ }).then((res) => {console.log(`Server running at port ${res.url}`)});
