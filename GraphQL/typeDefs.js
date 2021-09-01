@@ -23,7 +23,7 @@ type Post{
       password: String!,
       confirmPassword: String!,
       email: String!,
-      # type input is to show that how a query would look like
+      # type input is to show that how a query parameter should look like
   }
   type Mutation {
       register(registerInput:RegisterInput):User!

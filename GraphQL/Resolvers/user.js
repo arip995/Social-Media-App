@@ -63,7 +63,7 @@ module.exports = {
 
             //hash password and create auth token
             password = await bcrypt.hash(password,12);
-//understand it as newUser is a object of User model
+            //understand it as newUser is a object of User model
             const newUser = new User({
                 email,
                 username,
