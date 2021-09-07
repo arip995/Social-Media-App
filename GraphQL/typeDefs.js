@@ -10,6 +10,7 @@ type Post{
   # Comments in GraphQL strings (such as this one) start with the hash (#) symbol.
   type Query {
       getPosts: [Post]
+      getPost(postId: ID!):Post 
   }
   type User {
       id: ID!,
@@ -29,5 +30,7 @@ type Post{
       register(registerInput:RegisterInput):User!
       #the register query should pass a parameter registerInput which should look like RegisterInput and should retutn some value of type User
       login(username:String!,password:String!):User!
+      createPost(body:ID!):Post!
+      deletePost(postId: ID!):String!
   }
 `;
